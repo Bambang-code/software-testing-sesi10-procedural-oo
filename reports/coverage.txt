@@ -1,0 +1,7 @@
+Name                         Stmts   Miss Branch BrPart    Cover   Missing
+--------------------------------------------------------------------------
+src\zenta_auth\__init__.py       0      0      0      0  100.00%
+src\zenta_auth\scopes.py        10      0      6      0  100.00%
+src\zenta_auth\seller.py        52      0     12      0  100.00%
+--------------------------------------------------------------------------
+TOTAL                           62      0     18      0  100.00%

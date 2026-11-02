@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-11-02T14:51:07+07:00",
+  "timezone": "Asia/Bangkok (UTC+07:00)",
+  "python": "3.10.11",
+  "platform": "Windows",
+  "tools": {
+    "pytest": "8.4.2",
+    "pytest-cov": "7.0.0",
+    "coverage": "7.10.7"
+  },
+  "command": "python -m pytest -v --color=no --cov=zenta_auth --cov-branch --cov-report=term-missing --cov-report=html:htmlcov --cov-report=json:reports/coverage.json --cov-report=xml:reports/coverage.xml --junitxml=reports/junit.xml --cov-fail-under=100",
+  "result": {
+    "tests": 96,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage": {
+    "covered_lines": 62,
+    "num_statements": 62,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100.00",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "num_branches": 18,
+    "num_partial_branches": 0,
+    "covered_branches": 18,
+    "missing_branches": 0
+  },
+  "sha256": {
+    "src/zenta_auth/__init__.py": "87d1600579e1d5608926347d40b4136587f0a1f749e92be1a7f24987fea78416",
+    "src/zenta_auth/scopes.py": "8fdff811728c227fa96243fb4f7307aa294d534bfd259d6db1637b289e9045b9",
+    "src/zenta_auth/seller.py": "27ee0f5b355473ed0a2f94a4ca3bd3139c90617ff96a369d192fbd567865ee7e",
+    "tests/conftest.py": "f0f17417b98c56260e0b1cfa0da6289c6b533887931791d953a01777c0f525a1",
+    "tests/test_scopes.py": "d4a4888b276d889d9e6208d1732875b67f95024d6f82b93a47cf3e53554fdcf5",
+    "tests/test_seller.py": "4b2f5a78e28ce18a5950f96e40f3e5d8a119a9284a420cef38b3e40531fa6d83"
+  }
+}

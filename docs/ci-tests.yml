@@ -1,0 +1,31 @@
+# Template opsional. Salin ke .github/workflows/tests.yml untuk mengaktifkan CI.
+name: PyTest and branch coverage
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Run tests and verify full branch coverage
+        run: python scripts/run_tests.py
+      - name: Upload coverage evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sesi10-test-evidence
+          path: |
+            reports/
+            htmlcov/

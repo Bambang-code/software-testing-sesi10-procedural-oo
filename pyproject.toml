@@ -1,0 +1,20 @@
+[project]
+name = "software-testing-sesi10-procedural-oo"
+version = "1.0.0"
+description = "Tugas individu Bambang: procedural dan object oriented testing pada studi kasus Auth ZENTA."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
+
+[tool.coverage.run]
+branch = true
+source = ["zenta_auth"]
+relative_files = true
+
+[tool.coverage.report]
+show_missing = true
+precision = 2
+fail_under = 100

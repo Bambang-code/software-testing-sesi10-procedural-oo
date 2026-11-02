@@ -1,0 +1,122 @@
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-8.4.2, pluggy-1.7.0 -- C:\asemester5\projectwebservicexsoftwaretesting\software-testing-sesi10-procedural-oo\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\asemester5\projectwebservicexsoftwaretesting\software-testing-sesi10-procedural-oo
+configfile: pyproject.toml
+testpaths: tests
+plugins: cov-7.0.0
+collecting ... collected 96 items
+
+tests/test_scopes.py::test_p1_inactive_client_is_rejected PASSED         [  1%]
+tests/test_scopes.py::test_p2_empty_scope_is_rejected PASSED             [  2%]
+tests/test_scopes.py::test_p3_disallowed_scope_is_rejected PASSED        [  3%]
+tests/test_scopes.py::test_p4_allowed_scopes_are_returned PASSED         [  4%]
+tests/test_scopes.py::test_whitespace_only_is_empty[ ] PASSED            [  5%]
+tests/test_scopes.py::test_whitespace_only_is_empty[\t\n] PASSED         [  6%]
+tests/test_scopes.py::test_whitespace_only_is_empty[   \t   ] PASSED     [  7%]
+tests/test_scopes.py::test_normalization_removes_duplicate_scopes_and_whitespace PASSED [  8%]
+tests/test_scopes.py::test_partial_match_or_mixed_request_does_not_grant_extra_permissions[read:catalog admin:users] PASSED [  9%]
+tests/test_scopes.py::test_partial_match_or_mixed_request_does_not_grant_extra_permissions[READ:CATALOG] PASSED [ 10%]
+tests/test_scopes.py::test_partial_match_or_mixed_request_does_not_grant_extra_permissions[reserve:stockx] PASSED [ 11%]
+tests/test_scopes.py::test_empty_allowlist_rejects_nonempty_request PASSED [ 12%]
+tests/test_scopes.py::test_inactive_error_takes_precedence_over_other_invalid_input PASSED [ 13%]
+tests/test_scopes.py::test_allowlist_is_not_changed_by_validation PASSED [ 14%]
+tests/test_seller.py::test_entire_transition_contract[base-DRAFT-submit] PASSED [ 15%]
+tests/test_seller.py::test_entire_transition_contract[base-DRAFT-approve] PASSED [ 16%]
+tests/test_seller.py::test_entire_transition_contract[base-DRAFT-reject] PASSED [ 17%]
+tests/test_seller.py::test_entire_transition_contract[base-DRAFT-withdraw] PASSED [ 18%]
+tests/test_seller.py::test_entire_transition_contract[base-PENDING-submit] PASSED [ 19%]
+tests/test_seller.py::test_entire_transition_contract[base-PENDING-approve] PASSED [ 20%]
+tests/test_seller.py::test_entire_transition_contract[base-PENDING-reject] PASSED [ 21%]
+tests/test_seller.py::test_entire_transition_contract[base-PENDING-withdraw] PASSED [ 22%]
+tests/test_seller.py::test_entire_transition_contract[base-APPROVED-submit] PASSED [ 23%]
+tests/test_seller.py::test_entire_transition_contract[base-APPROVED-approve] PASSED [ 25%]
+tests/test_seller.py::test_entire_transition_contract[base-APPROVED-reject] PASSED [ 26%]
+tests/test_seller.py::test_entire_transition_contract[base-APPROVED-withdraw] PASSED [ 27%]
+tests/test_seller.py::test_entire_transition_contract[base-REJECTED-submit] PASSED [ 28%]
+tests/test_seller.py::test_entire_transition_contract[base-REJECTED-approve] PASSED [ 29%]
+tests/test_seller.py::test_entire_transition_contract[base-REJECTED-reject] PASSED [ 30%]
+tests/test_seller.py::test_entire_transition_contract[base-REJECTED-withdraw] PASSED [ 31%]
+tests/test_seller.py::test_entire_transition_contract[food-DRAFT-submit] PASSED [ 32%]
+tests/test_seller.py::test_entire_transition_contract[food-DRAFT-approve] PASSED [ 33%]
+tests/test_seller.py::test_entire_transition_contract[food-DRAFT-reject] PASSED [ 34%]
+tests/test_seller.py::test_entire_transition_contract[food-DRAFT-withdraw] PASSED [ 35%]
+tests/test_seller.py::test_entire_transition_contract[food-PENDING-submit] PASSED [ 36%]
+tests/test_seller.py::test_entire_transition_contract[food-PENDING-approve] PASSED [ 37%]
+tests/test_seller.py::test_entire_transition_contract[food-PENDING-reject] PASSED [ 38%]
+tests/test_seller.py::test_entire_transition_contract[food-PENDING-withdraw] PASSED [ 39%]
+tests/test_seller.py::test_entire_transition_contract[food-APPROVED-submit] PASSED [ 40%]
+tests/test_seller.py::test_entire_transition_contract[food-APPROVED-approve] PASSED [ 41%]
+tests/test_seller.py::test_entire_transition_contract[food-APPROVED-reject] PASSED [ 42%]
+tests/test_seller.py::test_entire_transition_contract[food-APPROVED-withdraw] PASSED [ 43%]
+tests/test_seller.py::test_entire_transition_contract[food-REJECTED-submit] PASSED [ 44%]
+tests/test_seller.py::test_entire_transition_contract[food-REJECTED-approve] PASSED [ 45%]
+tests/test_seller.py::test_entire_transition_contract[food-REJECTED-reject] PASSED [ 46%]
+tests/test_seller.py::test_entire_transition_contract[food-REJECTED-withdraw] PASSED [ 47%]
+tests/test_seller.py::test_entire_transition_contract[clothing-DRAFT-submit] PASSED [ 48%]
+tests/test_seller.py::test_entire_transition_contract[clothing-DRAFT-approve] PASSED [ 50%]
+tests/test_seller.py::test_entire_transition_contract[clothing-DRAFT-reject] PASSED [ 51%]
+tests/test_seller.py::test_entire_transition_contract[clothing-DRAFT-withdraw] PASSED [ 52%]
+tests/test_seller.py::test_entire_transition_contract[clothing-PENDING-submit] PASSED [ 53%]
+tests/test_seller.py::test_entire_transition_contract[clothing-PENDING-approve] PASSED [ 54%]
+tests/test_seller.py::test_entire_transition_contract[clothing-PENDING-reject] PASSED [ 55%]
+tests/test_seller.py::test_entire_transition_contract[clothing-PENDING-withdraw] PASSED [ 56%]
+tests/test_seller.py::test_entire_transition_contract[clothing-APPROVED-submit] PASSED [ 57%]
+tests/test_seller.py::test_entire_transition_contract[clothing-APPROVED-approve] PASSED [ 58%]
+tests/test_seller.py::test_entire_transition_contract[clothing-APPROVED-reject] PASSED [ 59%]
+tests/test_seller.py::test_entire_transition_contract[clothing-APPROVED-withdraw] PASSED [ 60%]
+tests/test_seller.py::test_entire_transition_contract[clothing-REJECTED-submit] PASSED [ 61%]
+tests/test_seller.py::test_entire_transition_contract[clothing-REJECTED-approve] PASSED [ 62%]
+tests/test_seller.py::test_entire_transition_contract[clothing-REJECTED-reject] PASSED [ 63%]
+tests/test_seller.py::test_entire_transition_contract[clothing-REJECTED-withdraw] PASSED [ 64%]
+tests/test_seller.py::test_initial_state_and_normalized_name[base] PASSED [ 65%]
+tests/test_seller.py::test_initial_state_and_normalized_name[food] PASSED [ 66%]
+tests/test_seller.py::test_initial_state_and_normalized_name[clothing] PASSED [ 67%]
+tests/test_seller.py::test_blank_shop_name_is_rejected[base-] PASSED     [ 68%]
+tests/test_seller.py::test_blank_shop_name_is_rejected[base-   ] PASSED  [ 69%]
+tests/test_seller.py::test_blank_shop_name_is_rejected[base-\n\t] PASSED [ 70%]
+tests/test_seller.py::test_blank_shop_name_is_rejected[food-] PASSED     [ 71%]
+tests/test_seller.py::test_blank_shop_name_is_rejected[food-   ] PASSED  [ 72%]
+tests/test_seller.py::test_blank_shop_name_is_rejected[food-\n\t] PASSED [ 73%]
+tests/test_seller.py::test_blank_shop_name_is_rejected[clothing-] PASSED [ 75%]
+tests/test_seller.py::test_blank_shop_name_is_rejected[clothing-   ] PASSED [ 76%]
+tests/test_seller.py::test_blank_shop_name_is_rejected[clothing-\n\t] PASSED [ 77%]
+tests/test_seller.py::test_blank_rejection_reason_leaves_application_pending[base-] PASSED [ 78%]
+tests/test_seller.py::test_blank_rejection_reason_leaves_application_pending[base-   ] PASSED [ 79%]
+tests/test_seller.py::test_blank_rejection_reason_leaves_application_pending[base-\n\t] PASSED [ 80%]
+tests/test_seller.py::test_blank_rejection_reason_leaves_application_pending[food-] PASSED [ 81%]
+tests/test_seller.py::test_blank_rejection_reason_leaves_application_pending[food-   ] PASSED [ 82%]
+tests/test_seller.py::test_blank_rejection_reason_leaves_application_pending[food-\n\t] PASSED [ 83%]
+tests/test_seller.py::test_blank_rejection_reason_leaves_application_pending[clothing-] PASSED [ 84%]
+tests/test_seller.py::test_blank_rejection_reason_leaves_application_pending[clothing-   ] PASSED [ 85%]
+tests/test_seller.py::test_blank_rejection_reason_leaves_application_pending[clothing-\n\t] PASSED [ 86%]
+tests/test_seller.py::test_withdraw_resubmit_then_approve_sequence[base] PASSED [ 87%]
+tests/test_seller.py::test_withdraw_resubmit_then_approve_sequence[food] PASSED [ 88%]
+tests/test_seller.py::test_withdraw_resubmit_then_approve_sequence[clothing] PASSED [ 89%]
+tests/test_seller.py::test_two_instances_do_not_share_state[base] PASSED [ 90%]
+tests/test_seller.py::test_two_instances_do_not_share_state[food] PASSED [ 91%]
+tests/test_seller.py::test_two_instances_do_not_share_state[clothing] PASSED [ 92%]
+tests/test_seller.py::test_status_cannot_be_assigned_via_public_property[base] PASSED [ 93%]
+tests/test_seller.py::test_status_cannot_be_assigned_via_public_property[food] PASSED [ 94%]
+tests/test_seller.py::test_status_cannot_be_assigned_via_public_property[clothing] PASSED [ 95%]
+tests/test_seller.py::test_category_override_and_base_contract[SellerApplication-GENERAL] PASSED [ 96%]
+tests/test_seller.py::test_category_override_and_base_contract[FoodSellerApplication-FOOD] PASSED [ 97%]
+tests/test_seller.py::test_category_override_and_base_contract[ClothingSellerApplication-CLOTHING] PASSED [ 98%]
+tests/test_seller.py::test_polymorphic_collection_uses_the_same_interface PASSED [100%]
+
+- generated xml file: C:\asemester5\projectwebservicexsoftwaretesting\software-testing-sesi10-procedural-oo\reports\junit.xml -
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.10.11-final-0 _______________
+
+Name                         Stmts   Miss Branch BrPart    Cover   Missing
+--------------------------------------------------------------------------
+src\zenta_auth\__init__.py       0      0      0      0  100.00%
+src\zenta_auth\scopes.py        10      0      6      0  100.00%
+src\zenta_auth\seller.py        52      0     12      0  100.00%
+--------------------------------------------------------------------------
+TOTAL                           62      0     18      0  100.00%
+Coverage HTML written to dir htmlcov
+Coverage XML written to file reports/coverage.xml
+Coverage JSON written to file reports/coverage.json
+Required test coverage of 100% reached. Total coverage: 100.00%
+============================= 96 passed in 0.45s ==============================
