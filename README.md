@@ -37,8 +37,8 @@ opsional tersedia di [docs/ci-tests.yml](docs/ci-tests.yml).
    [state machine dan tabel transisi](docs/analysis.md#state-machine-oo).
 5. [Test state, inheritance, dan polymorphism](tests/test_seller.py), termasuk
    invalid transition, state tidak berubah saat gagal, dan urutan pemanggilan.
-6. [Laporan LaTeX](laporan/laporan-sesi10-bambang.tex) dan
-   [laporan PDF siap dibaca](output/pdf/laporan-sesi10-bambang.pdf).
+6. [Laporan LaTeX](laporan/Laporan%20Sesi%2010%20Bambang%20Herlambang.tex) dan
+   [laporan PDF siap dibaca](output/pdf/Laporan%20Sesi%2010%20Bambang%20Herlambang.pdf).
 
 ## Jalankan di Windows PowerShell
 
@@ -93,7 +93,7 @@ Builder memeriksa hash source/test terhadap hasil pengujian sebelum menulis
 angka coverage dan cuplikan kode pada `laporan/generated/`. Jika source berubah,
 jalankan kembali `scripts/run_tests.py`. Output PDF berada di `output/pdf/`.
 Untuk Overleaf, unggah folder `laporan/` beserta folder `reports/` sebagai sibling;
-pilih `laporan/laporan-sesi10-bambang.tex` sebagai main document.
+pilih `laporan/Laporan Sesi 10 Bambang Herlambang.tex` sebagai main document.
 File generated merupakan bagian dari sumber laporan dan disertakan di repo.
 
 ## Struktur

@@ -92,11 +92,19 @@ def main():
         excerpt(ROOT / "tests/test_seller.py", {"test_entire_transition_contract"}), encoding="utf-8")
     output = ROOT / "output/pdf"
     output.mkdir(parents=True, exist_ok=True)
-    subprocess.run([
-        args.tectonic, "--keep-logs", "--outdir", str(output),
-        str(ROOT / "laporan/laporan-sesi10-bambang.tex"),
-    ], cwd=ROOT, check=True)
-    print("PDF: " + str(output / "laporan-sesi10-bambang.pdf"))
+    # A space-free TeX job name avoids quoted .out paths on Windows.
+    source = ROOT / "laporan/Laporan Sesi 10 Bambang Herlambang.tex"
+    build_source = source.with_name("_build_sesi10.tex")
+    try:
+        build_source.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
+        subprocess.run([
+            args.tectonic, "--keep-logs", "--outdir", str(output), str(build_source),
+        ], cwd=ROOT, check=True)
+        (output / "_build_sesi10.pdf").replace(output / "Laporan Sesi 10 Bambang Herlambang.pdf")
+    finally:
+        build_source.unlink(missing_ok=True)
+    print("PDF: " + str(output / "Laporan Sesi 10 Bambang Herlambang.pdf"))
+
 
 
 if __name__ == "__main__":

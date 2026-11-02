@@ -2,20 +2,20 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[indonesian]{babel}
-\usepackage[margin=2.2cm,headheight=16pt]{geometry}
+\usepackage[a4paper,portrait,margin=2.2cm,headheight=16pt]{geometry}
 \usepackage{microtype,graphicx,xcolor,amsmath}
 \usepackage{array,booktabs,tabularx}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,shapes.geometric,calc}
 \usepackage{enumitem,fancyhdr,listings}
 \usepackage{xurl,hyperref}
-\usepackage{pdflscape}
+\usepackage{capt-of}
 \definecolor{navy}{HTML}{173B63}
 \definecolor{pale}{HTML}{F2F5F9}
 \definecolor{muted}{HTML}{526273}
 \definecolor{green}{HTML}{276649}
 \hypersetup{colorlinks=true,linkcolor=navy,urlcolor=navy,
-pdftitle={Tugas Individu Sesi 10 - Procedural dan OO Testing - Bambang Herlambang},
+pdftitle={Laporan Sesi 10 Bambang Herlambang},
 pdfauthor={Bambang Herlambang}}
 \urlstyle{same}
 \setlength{\parindent}{0pt}
@@ -283,7 +283,7 @@ Test scope dan OO digabung menjadi \TestTotal{} kasus setelah parametrization.
 \note{\textbf{Hasil aktual lokal: \TestTotal{} test lulus, \TestFailures{}
 gagal.} Eksekusi: \texttt{\RunAt} (UTC+07:00). Lingkungan:
 \RunPlatform{}, Python \PythonVersion{}, PyTest \PytestVersion{},
-pytest-cov \PytestCovVersion{}, coverage.py \CovVersion{}. Angka halaman
+pytest-cov \PytestCovVersion{}, coverage.py \CovVersion{}. Angka ringkasan
 ini dihasilkan dari JSON hasil eksekusi; source/test dicek SHA-256 sebelum
 PDF dibangun.}
 
@@ -319,6 +319,56 @@ atau keamanan Auth produksi benar. Tidak ada test integrasi Google/Neon.
 Laporan HTML menyediakan detail per baris, XML/JUnit untuk alat CI,
 dan metadata menyimpan versi serta hash source/test.
 
+
+\clearpage
+\subsection{Bukti eksekusi PyTest di terminal}
+Gambar~\ref{fig:terminal} memperlihatkan hasil eksekusi oleh mahasiswa:
+96 test berstatus lulus dalam 0,39 detik. Ringkasan coverage mencatat 62
+statement dan 18 tujuan cabang, tanpa statement hilang maupun cabang parsial.
+Baris keluaran juga menunjukkan pembuatan laporan HTML, XML, JSON, dan JUnit.
+Hasil ini mendukung ringkasan pengujian lokal pada bagian sebelumnya.
+\begin{center}
+\includegraphics[width=\linewidth,height=0.74\textheight,keepaspectratio]{images/bukti-pytest-terminal.png}
+\captionof{figure}{Hasil pengujian dan coverage pada terminal, ditampilkan utuh.}\label{fig:terminal}
+\end{center}
+\clearpage
+\subsection{Bukti coverage per modul pada tab Files}
+Gambar~\ref{fig:files} menampilkan ringkasan HTML dari eksekusi yang sama.
+Modul \texttt{scopes.py} memiliki 10 statement dan 6 tujuan cabang;
+\texttt{seller.py} memiliki 52 statement dan 12 tujuan cabang. Semua tercakup,
+sehingga totalnya 62 statement dan 18 tujuan cabang dengan coverage 100\%.
+Kolom \textit{missing}, \textit{excluded}, dan \textit{partial} bernilai nol;
+file \texttt{\_\_init\_\_.py} tidak memiliki statement yang diukur.
+\begin{center}
+\includegraphics[width=\linewidth,height=0.74\textheight,keepaspectratio]{images/bukti-coverage-browser.png}
+\captionof{figure}{Ringkasan coverage per file pada tab Files, ditampilkan utuh.}\label{fig:files}
+\end{center}
+\clearpage
+\subsection{Bukti coverage fungsi dan method pada tab Functions}
+Gambar~\ref{fig:functions} merinci bagian kode yang dijalankan di setiap fungsi.
+\texttt{validate\_scopes} mencakup 8 statement dan 6 tujuan cabang; dua statement
+lain pada modul scope berada di luar fungsi. Method \texttt{reject} memiliki
+4 tujuan cabang karena memeriksa state dan alasan penolakan, sedangkan
+\texttt{submit}, \texttt{approve}, dan \texttt{withdraw} masing-masing memiliki
+2. Seluruhnya tercakup; ketepatan hasil tetap diperiksa melalui assertion test.
+\begin{center}
+\includegraphics[width=\linewidth,height=0.74\textheight,keepaspectratio]{images/bukti-coverage-functions.png}
+\captionof{figure}{Rincian coverage fungsi dan method pada tab Functions, ditampilkan utuh.}\label{fig:functions}
+\end{center}
+\clearpage
+\subsection{Bukti coverage class pada tab Classes}
+Gambar~\ref{fig:classes} menunjukkan \texttt{SellerApplication} mencakup 26
+statement dan 12 tujuan cabang. Kedua subclass masing-masing mencakup satu
+statement pada override kategori. Baris \textit{(no class)} memuat kode di luar
+method class, sehingga angka class tidak sama dengan total modul.
+Class tanpa statement terukur tampil 100\% menurut alat; bukti perilaku
+pewarisan dan polimorfisme berasal dari test kontrak serta urutan transisi,
+bukan persentase coverage saja.
+\begin{center}
+\includegraphics[width=\linewidth,height=0.74\textheight,keepaspectratio]{images/bukti-coverage-classes.png}
+\captionof{figure}{Rincian coverage class pada tab Classes, ditampilkan utuh.}\label{fig:classes}
+\end{center}
+
 \newpage
 \section{Reproduksi dan pemetaan tugas}
 Jalankan dari root repo individu. Contoh PowerShell berikut tidak memerlukan
@@ -336,7 +386,7 @@ python -m pytest --cov=zenta_auth --cov-branch --cov-report=term-missing
 Untuk membangun ulang PDF setelah pengujian, pasang Tectonic, lalu jalankan
 \texttt{python scripts/build\_report.py}. Jika binary tidak di PATH,
 tambahkan opsi \texttt{--tectonic} diikuti lokasi binary. PDF disimpan pada
-\path{output/pdf/laporan-sesi10-bambang.pdf}. README memuat perintah lengkap.
+\path{output/pdf/Laporan Sesi 10 Bambang Herlambang.pdf}. README memuat perintah lengkap.
 Template GitHub Actions tersedia di \path{docs/ci-tests.yml} untuk menjalankan
 test dan mengunggah artefak coverage. CI belum diaktifkan saat laporan ini
 dibuat; angka di atas merupakan hasil eksekusi lokal. CI bukan syarat tugas ini.
@@ -370,38 +420,4 @@ Software Engineering}, SE-2(4), 308--320. DOI: 10.1109/TSE.1976.233837.
 \item coverage.py. \textit{Branch coverage measurement}.
 \url{https://coverage.readthedocs.io/en/latest/branch.html}.
 \end{enumerate}
-\clearpage
-\begin{landscape}
-\section*{Lampiran A -- Bukti eksekusi PyTest}
-Screenshot diambil oleh mahasiswa dan disertakan secara utuh tanpa pemotongan.
-Terlihat hasil 96 test lulus serta coverage 100\% (62 statement dan 18 cabang).
-\begin{center}
-\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{images/bukti-pytest-terminal.png}
-\end{center}
-\clearpage
-\section*{Lampiran B -- Laporan coverage HTML}
-Screenshot browser diambil oleh mahasiswa dan disertakan secara utuh tanpa
-pemotongan. Tabel menunjukkan 62 statement, 18 cabang, tanpa statement hilang,
-pengecualian, maupun cabang parsial; total coverage 100\%.
-\begin{center}
-\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{images/bukti-coverage-browser.png}
-\end{center}
-\clearpage
-\section*{Lampiran C -- Coverage per fungsi}
-Screenshot tab Functions diambil oleh mahasiswa dan ditampilkan utuh.
-Rincian memperlihatkan coverage fungsi validasi scope serta method pengajuan
-seller, termasuk method kategori pada kedua subclass.
-\begin{center}
-\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{images/bukti-coverage-functions.png}
-\end{center}
-\clearpage
-\section*{Lampiran D -- Coverage per class}
-Screenshot tab Classes diambil oleh mahasiswa dan ditampilkan utuh.
-Rincian mencakup SellerApplication, FoodSellerApplication, dan
-ClothingSellerApplication. Angka coverage menunjukkan keterlintasan kode;
-validitas transisi dan kontrak subclass diperiksa melalui assertion pada test.
-\begin{center}
-\includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{images/bukti-coverage-classes.png}
-\end{center}
-\end{landscape}
 \end{document}
