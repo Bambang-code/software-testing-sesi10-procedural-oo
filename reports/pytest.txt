@@ -119,4 +119,4 @@ Coverage HTML written to dir htmlcov
 Coverage XML written to file reports/coverage.xml
 Coverage JSON written to file reports/coverage.json
 Required test coverage of 100% reached. Total coverage: 100.00%
-============================= 96 passed in 0.45s ==============================
+============================= 96 passed in 0.39s ==============================
