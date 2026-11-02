@@ -33,10 +33,9 @@ columns=fullflexible,keepspaces=true,showstringspaces=false,
 tabsize=4,xleftmargin=6pt,xrightmargin=6pt,aboveskip=8pt,belowskip=8pt}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\color{navy}Software Testing / Sesi 10}
-\fancyhead[R]{\small Bambang Herlambang}
-\fancyfoot[L]{\footnotesize Model pengujian Auth ZENTA}
-\fancyfoot[R]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\footnotesize\thepage}
 \newcommand{\note}[1]{\begingroup\setlength{\fboxsep}{9pt}
 \colorbox{pale}{\parbox{\dimexpr\linewidth-18pt\relax}{\small #1}}\par\endgroup}
 \input{generated/results.tex}
